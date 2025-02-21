@@ -9,6 +9,8 @@ let tasklist = document.querySelector(".taskList")
 
 let id =0;
 
+
+//to hande the deletion of tasks
 tasklist.addEventListener("click", function (event) {
     if (event.target.classList.contains("delete")) {
         event.target.parentElement.remove();
@@ -16,7 +18,7 @@ tasklist.addEventListener("click", function (event) {
 });
 
 
-
+//to add tasks to the list
 addtask.addEventListener("click", function () { 
     let date = calender.value;
     let task = taskinput.value;
