@@ -1,0 +1,19 @@
+
+
+.taskList{
+    display: block;
+}
+
+.taskList li{
+    margin-bottom: 10px;
+}
+
+
+.listfromjs{
+    display: flex;
+    gap: 30px;
+}
+
+body{
+    background-color: rgb(249, 240, 227);
+}
