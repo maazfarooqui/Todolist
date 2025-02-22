@@ -1,8 +1,12 @@
 let delbuttonlist = [];
 
-let calender = document.querySelector(".calender")
-let taskinput = document.querySelector(".taskInput")
-let addtask = document.querySelector(".addTask")
+let calender = document.querySelectorAll(".calender")
+let taskinput = document.querySelectorAll(".taskInput")
+let addtasks = document.querySelectorAll(".addTask")
+
+console.log(addtasks);
+console.log(calender);
+console.log(taskinput);
 
 let tasklist = document.querySelector(".taskList")
 
@@ -17,23 +21,27 @@ tasklist.addEventListener("click", function (event) {
     }
 });
 
-
-//to add tasks to the list
-addtask.addEventListener("click", function () { 
-    let date = calender.value;
-    let task = taskinput.value;
-
-    if (!task || !date) 
-        {alert("Please enter both task and date");
-     return;}
-
-    tasklist.innerHTML += `<li class="listfromjs"> <div style="width:150px;">${task}</div>   <div> ${date}</div>  <button id=${id}  class="delete">Delete</button> </li>`;
-    let delbutton = document.getElementById(id);
-
-
+addtasks.forEach((addtask, i)=>{
+    addtask.addEventListener("click", function () { 
+        let date = calender[i].value;
+        let task = taskinput[i].value;
     
+        if (!task || !date) 
+            {alert("Please enter both task and date");
+         return;}
+    
+        tasklist.innerHTML += `<li class="listfromjs"> <div style="width:150px;">${task}</div>   <div> ${date}</div>  <button id=${id}  class="delete">Delete</button> </li>`;
+       
+
+        
+    })
     
 })
+
+
+
+
+//to add tasks to the list
 
 
 
